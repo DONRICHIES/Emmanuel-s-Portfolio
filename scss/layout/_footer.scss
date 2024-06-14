@@ -1,0 +1,193 @@
+.header {
+    z-index: 990;
+    position: relative;
+    height: 100%;
+    min-height: 600px;
+    text-align: center;
+    color: $white;
+    background-image: url(../imgs/header.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: .2s;
+    transition-timing-function: linear;
+
+    .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-image: radial-gradient(140% 110% at 48% 42%,rgba($dark-theme-color, .50),rgba($dark-theme-color, .60),rgba($dark-theme-color, .70),rgba($dark-theme-color, .80),rgba($dark-theme-color, .93),$dark-theme-color 55%,$dark-theme-color 200%,);
+    }
+
+    .header-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+
+        .header-title {
+            font-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1300 - 300)));
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .header-subtitle {
+            opacity: 1;
+            margin-bottom: 30px;
+        }
+
+        .btn-theme-color {
+            padding: 8px 20px;
+            border-radius: 30px;
+            border: 2px solid $white;
+            color: $white;
+            background: transparent;
+            outline: 0;
+            @include transition(all,.3s);
+            font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1300 - 300)));
+            font-weight: bold;
+
+
+            i {
+                position: relative;
+                top: 1px;
+                font-weight: bold;
+            }
+
+            &:hover {
+                background: rgba($white, .5);
+                border-color: rgba($white, .1);
+                color: $black;
+            }
+
+            &:active {
+                background: rgba($white, 9)
+            }
+        }
+    }
+
+
+    &-title {
+        font-size: 2.4rem;
+        font-weight: bold;
+        opacity: .8;
+    }
+
+    // header mini
+    &-mini {
+        min-height: 24rem;
+        height: 24rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+        background: lighten($primary, 25%) !important;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* page container and row */
+.page-container {
+    text-align: center;
+    padding: 50px 0;
+}
+@include media-breakpoint-down(sm){
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Conatct section */
+.contact-section {
+    padding-top: 120px;
+    z-index: 990;
+    position: relative;
+    text-align: center;
+    color: $white;
+    background-image: url(../imgs/footer.jpg);
+    background-size: cover;
+    background-position: bottom;
+
+    .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-image: radial-gradient(200% 130% at 48% 65%,rgba($dark-theme-color, .50),rgba($dark-theme-color, .60),rgba($dark-theme-color, .70),rgba($dark-theme-color, .87),rgba($dark-theme-color, .99),$dark-theme-color 55%,$dark-theme-color 200%,);
+    }
+}
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    padding: 20px 0;
+    margin-top: 50px;
+    align-items: center;
+
+    .infos {
+        text-align: right;
+        color: $white;
+        opacity: 1;
+        width: 50%;
+        margin-bottom: -1px;
+        padding: 0 4px;
+        font-size: 14px;
+
+        a {
+            color: inherit;
+            display: inline-block;
+        }
+    }
+
+    span {
+        width: 40px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .links {
+        width: 50%;
+        text-align: left;
+        padding: 0 4px;         
+        a {
+            display: inline-block;
+            margin: 0 15px;
+            color: $white;
+            opacity: 1;
+            font-size: 14px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+@include media-breakpoint-down(md) {
+    .footer {
+        flex-direction: column;
+        .infos,
+        .links {
+            width: 100%;
+            text-align: center;
+            margin: 5px 0;
+        }
+        span { display: none}
+    }
+}
